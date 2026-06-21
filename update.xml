@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  Quiet Filter — self-hosted update manifest.
+
+  Chrome's force-install does NOT point at the .crx directly. It points at THIS
+  file (an "update manifest"), which in turn tells Chrome where the .crx lives.
+
+  Replace:
+    fpobbapdpakdohbkhenlommhahanepmn  -> the 32-char id of your packed extension (see LOCKING-GUIDE.md)
+    https://YOUR-HOST/ -> wherever you host quiet-filter.crx (https, reachable by the browser)
+    version            -> must match the "version" field in your extension's manifest.json
+
+  Host this file and the .crx on the same https location. When you ship an update,
+  bump the version here and in manifest.json, and Chrome will pull it automatically.
+-->
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='fpobbapdpakdohbkhenlommhahanepmn'>
+    <updatecheck codebase='https://raw.githubusercontent.com/jross9425/filter/main/quiet-filter.crx' version='1.0.0' />
+  </app>
+</gupdate>
